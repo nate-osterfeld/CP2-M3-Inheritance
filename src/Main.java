@@ -4,6 +4,12 @@ public class Main {
         Worker joeWorker = new Worker(joe, 20);
 
         joeWorker.displayWeeklyPay(60);
-        System.out.print(joeWorker.toXML());
+
+        SalaryWorker joeSalary = new SalaryWorker(joeWorker, 0, 75000);
+
+        System.out.println("toString \n" + joeSalary.toString());
+        System.out.println("toCSV \n" + joeSalary.toCSV());
+        System.out.println("toJSON \n" + joeSalary.toJSON());
+        System.out.println("toXML \n" + joeSalary.toXML());
     }
 }
