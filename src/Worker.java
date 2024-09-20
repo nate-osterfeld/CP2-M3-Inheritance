@@ -1,6 +1,8 @@
 public class Worker extends Person {
+    // fields
     private int hourlyPayRate;
 
+    // constructors
     public Worker(String firstName, String lastName, String ID, String title, int YOB, int hourlyPayRate) {
         super(firstName, lastName, ID, title, YOB);
 
@@ -53,8 +55,6 @@ public class Worker extends Person {
     }
 
     // overrides
-
-
     @Override
     public String toString() {
         return "Worker{" +
