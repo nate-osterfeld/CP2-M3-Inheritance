@@ -1,15 +1,38 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Person joe = new Person("Joe", "Walsh", "000001", "Mr.", 1960);
-        Worker joeWorker = new Worker(joe, 20);
+        ArrayList<Worker> workers = new ArrayList<>();
 
-        joeWorker.displayWeeklyPay(60);
+        workers.add(new Worker("Joe", "Walsh", "000001", "Mr.", 1947, 22));
+        workers.add(new Worker("Lindsey", "Buckingham", "000002", "Mr.", 1949, 28));
+        workers.add(new Worker("Bob", "Weir", "000003", "Mr.", 1947, 26));
+        workers.add(new SalaryWorker("Lou", "Reed", "000004", "Mr.", 1942, 0, 75000));
+        workers.add(new SalaryWorker("Frank", "Zappa", "000005", "Mr.", 1940, 0, 80000));
+        workers.add(new SalaryWorker("Syd", "Barrett", "000006", "Mr.", 1946, 0, 78000));
 
-        SalaryWorker joeSalary = new SalaryWorker(joeWorker, 0, 75000);
+        for (int week = 1; week <= 3; week++) {
+            for (Worker w: workers) {
+                if (week != 2) {
+                    if (w.getHourlyPayRate() == 0)
+                        System.out.println("Week " + week + " (salary)");
+                    else
+                        System.out.println("Week " + week + " (hourly)");
 
-        System.out.println("toString \n" + joeSalary.toString());
-        System.out.println("toCSV \n" + joeSalary.toCSV());
-        System.out.println("toJSON \n" + joeSalary.toJSON());
-        System.out.println("toXML \n" + joeSalary.toXML());
+                    System.out.println("Name: " + w.formalName());
+                    w.displayWeeklyPay(40);
+                } else {
+                    if (w.getHourlyPayRate() == 0)
+                        System.out.println("Week " + week + " (salary)");
+                    else
+                        System.out.println("Week " + week + " (hourly)");
+
+                    System.out.println("Name: " + w.formalName());
+                    w.displayWeeklyPay(50);
+                }
+
+                System.out.println();
+            }
+        }
     }
 }

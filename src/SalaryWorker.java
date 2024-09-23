@@ -42,7 +42,7 @@ public class SalaryWorker extends Worker {
 
     @Override
     public void displayWeeklyPay(double hoursWorked) {
-        System.out.println("Weekly pay: $" + (annualSalary / 52));
+        System.out.println("Total pay: $" + String.format("%.2f", annualSalary / 52));
     }
 
     @Override
